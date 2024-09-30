@@ -8,9 +8,12 @@ response = requests.get(url_base)
 
 site = BeautifulSoup(response.text, 'html.parser')
 
-noticias = site.findAll('div', attrs={'id':'bastian-feed-item'})
+noticias = site.find('div', attrs={'class':'feed-post bstn-item-shape type-materia'})
 
 for noticia in noticias:
-    titulo = noticia.find('a', attrs={'feed-post-body-title'})
-    print(titulo.text)
+    titulos = noticias.find('a', attrs={'class': 'feed-post-link'})
+    print(titulos.text)
+    print(titulos['href'])
+    subtitulo = noticias.find('div', attrs={'class': 'feed-post-body-resumo'})
+    
     
