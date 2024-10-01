@@ -22,4 +22,4 @@ for produtos in produto:
   print(preco.text)
   
 news = pd.DataFrame(lista_noticias, columns=['titulo', 'descricao', 'preco']) 
-news.to_csv('tenis.csv', index=False, sep=";")
+news.to_csv('tenis.json', index=False, sep=";")
